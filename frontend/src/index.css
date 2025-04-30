@@ -1,0 +1,115 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Orbitron:wght@700&family=Rajdhani:wght@600&display=swap');
+
+/* Light Theme Variables */
+body[data-theme='light'] {
+  --color-neon-blue: #007BFF; /* Standard blue */
+  --color-gold: #FFA500; /* Standard orange/gold */
+  --color-bg-dark: #F4F7FC; /* Light gray background */
+  --color-bg-panel: #FFFFFF; /* White panel */
+  --color-bg-input: #FFFFFF; /* White input */
+  --color-text-primary: #212529; /* Dark text */
+  --color-text-secondary: #6C757D; /* Gray text */
+  --color-border-panel: #DDE2E9;
+  --color-border-input: #CED4DA;
+  --color-guess-box-bg: #E9ECEF;
+  --color-guess-box-border: #CED4DA;
+  --color-feedback-empty: #DDE2E9; 
+  --color-feedback-filled: #4CCA75;
+  --shadow-glow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-glow-intense: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Orbitron', sans-serif;
+  --font-guess: 'Rajdhani', sans-serif;
+  --transition-colors: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Dark Theme Variables (Squid Game Inspired) */
+body[data-theme='dark'] {
+  --color-squid-pink: #E83E8C;  /* Iconic Pink */
+  --color-squid-teal: #00A99D;  /* Iconic Teal */
+  --color-accent: var(--color-squid-teal); /* Use teal as the main accent */
+  
+  --color-bg-dark: #080A0F; /* Even darker background */
+  --color-bg-panel: #10141C; /* Slightly darker panel */
+  --color-bg-input: #181D29; /* Input background */
+  
+  --color-text-primary: #D1D5DB; /* Slightly off-white text */
+  --color-text-secondary: #8A92A3; /* Muted secondary text */
+  
+  --color-border-panel: rgba(0, 169, 157, 0.3); /* Teal border, less intense */
+  --color-border-input: rgba(0, 169, 157, 0.2); /* Dimmer teal border */
+  
+  --color-guess-box-bg: var(--color-bg-input); /* Use input background */
+  --color-guess-box-border: var(--color-border-input);
+  
+  --color-feedback-empty: rgba(138, 146, 163, 0.2); /* Dim outline for empty squares */
+  --color-feedback-filled: var(--color-squid-teal); /* Teal for filled squares */
+
+  --shadow-glow: 0 0 8px rgba(0, 169, 157, 0.25); /* Reduced teal glow */
+  --shadow-glow-intense: 0 0 12px rgba(0, 169, 157, 0.4); /* Reduced intense teal glow */
+
+  /* Keep existing fonts for now, can adjust later */
+  --font-primary: 'Inter', sans-serif;
+  --font-heading: 'Orbitron', sans-serif; 
+  --font-guess: 'Rajdhani', sans-serif;
+  --transition-colors: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  
+  /* Rename old variables to use new scheme - find/replace might be needed */
+  --color-neon-blue: var(--color-squid-teal); /* Map neon-blue usage to teal */
+  --color-gold: var(--color-squid-pink);    /* Map gold usage to pink */
+}
+
+/* Base styles */
+html {
+  height: 100%;
+}
+
+:root {
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* Apply transition using variable */
+  transition: var(--transition-colors);
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* Rely on theme variables set by data-theme */
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-dark);
+}
+
+#root { 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+@media (prefers-reduced-motion) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

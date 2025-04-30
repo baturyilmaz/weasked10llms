@@ -1,0 +1,26 @@
+.mute-toggle-button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  min-width: 44px;
+  min-height: 44px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mute-toggle-button:hover,
+.mute-toggle-button:active {
+  color: var(--color-accent);
+  background-color: var(--color-bg-tertiary);
+}
+
+body[data-theme='dark'] .mute-toggle-button:hover,
+body[data-theme='dark'] .mute-toggle-button:active {
+  background-color: rgba(255, 255, 255, 0.1);
+} 

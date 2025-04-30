@@ -1,0 +1,147 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.app {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.app-header {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.app-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-neon-blue);
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-shadow: none;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(2, 60, 255, 0.6);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(2, 60, 255, 0.8), 0 0 20px rgba(255, 196, 37, 0.4);
+  }
+}
+
+.nav-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: var(--transition-colors), border-color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-neon-blue);
+  border-color: var(--color-border-input);
+  background-color: rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+}
+
+body[data-theme='dark'] .nav-link:hover {
+  color: #FFFFFF;
+  text-shadow: 0 0 4px var(--color-neon-blue);
+}
+
+/* Tablet and larger screens */
+@media (min-width: 480px) { 
+  .app {
+    padding: 1rem;
+  }
+  .app-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+    margin-right: 0.8rem;
+  }
+  #root {
+    padding: 1.5rem;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 768px) { 
+  .app {
+    padding: 2rem 1rem;
+  }
+  .app-title {
+    font-size: 2.5rem; 
+    margin-bottom: 2rem;
+  }
+  .app-header {
+    top: 1rem;
+    right: 1rem;
+  }
+  #root {
+    max-width: 1280px;
+    padding: 2rem;
+  }
+}
+
+/* Dark mode specific title styling */
+body[data-theme='dark'] .app-title {
+  text-shadow: 0 0 8px var(--color-neon-blue), 0 0 15px rgba(0, 169, 157, 0.4);
+}
